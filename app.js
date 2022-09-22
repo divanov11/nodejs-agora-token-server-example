@@ -5,8 +5,8 @@ const app = express()
 const port = 3000
 
 
-const APP_ID = 'f59a9df61e6149b69c0c3e681f8282ad'
-const APP_CERTIFICATE = 'b1ef9658de0d4eb788393157a7f44550'
+const APP_ID = 'YOUR APP ID'
+const APP_CERTIFICATE = 'YOUR APP CERTIFICATE'
 
 app.use(express.json())
 
@@ -15,7 +15,7 @@ app.get('/', async (req, res) => {
 })
 
 
-app.get('/token', async (req, res) => {
+app.get('/token-rtc', async (req, res) => {
     let CHANNEL_NAME = 'main'
     let uid = 0
     let role = RtcRole.SUBSCRIBER
@@ -28,9 +28,9 @@ app.get('/token', async (req, res) => {
     res.status(200).send(token)
 })
 
-app.get('/token_rtm', async (req, res) => {
+app.get('/token-rtm', async (req, res) => {
     let CHANNEL_NAME = 'main'
-    let account = 'dennis'
+    let account = '1'
     let role = RtmRole.SUBSCRIBER
     let expireTime = 36000
     let currentTime = Math.floor(Date.now() / 1000)
